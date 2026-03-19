@@ -1,69 +1,67 @@
-# CS253 -DAA Practical Assignment
+# CS253 Practical Assignment - Sorting Algorithms
+NITK Surathkal
 
+## Files in this repo
+- sorting.c - main code with all sorting algorithms
+- graphs.py - generates graphs from the output
+- sample_input.txt - example input file
+- results.csv - timing and comparison data (generated after running)
 
-## Files
-- sorting.c - all the sorting algorithms
-- graphs.py - for generating graphs using matplotlib
-- sample_input.txt - sample input file
-
-## How to compile and run
-
-first compile the c file:
-
-gcc -o sorting sorting.c -lm
-
-
-then run it:
-
-./sorting > results.csv
-
-it will ask you to pick 1 or 2
-- pick 1 for running all experiments (this generates the csv file for graphs)
-- pick 2 if you want to sort from a file
-
-it takes like 2-3 mins to finish, you'll see "Done n=..." in terminal
-
-## For graphs
-
-install matplotlib first if you dont have it:
-
-pip install matplotlib pandas
-
-
-then run:
-
-python3 graphs.py
-
-
-make sure results.csv is in the same folder before running this
-
-graphs will be saved as png files (fig1, fig2... etc)
-
-## Input file format
-
-if you want to sort from a file, format should be like this:
-
-5
-64
-25
-12
-22
-11
-
-first line is n (number of elements), then each element on a new line
-
-sample_input.txt is already there as an example
-
-## Algorithms implemented
+## Algorithms
 1. Selection Sort
 2. Bubble Sort
 3. Insertion Sort
 4. Merge Sort
-5. Quick Sort - first element pivot
-6. Quick Sort - random pivot
-7. Quick Sort - median of three pivot
+5. Quick Sort - first element as pivot
+6. Quick Sort - random element as pivot
+7. Quick Sort - median of three as pivot
 8. Heap Sort
 9. Radix Sort
 
+## How to compile
+
+```
+gcc -o sorting sorting.c -lm
+```
+
+## How to run
+
+```
+./sorting > results.csv
+```
+
+when it asks, enter 1 to run all experiments
+it will take around 2-3 mins, you can see the progress in terminal
+
+## How to generate graphs
+
+first install the required libraries (only once):
+```
+pip install matplotlib pandas
+```
+
+then run:
+```
+python graphs.py
+```
+
+graphs will be saved as png files in the same folder
+
+## To sort from a file
+
+run the program and enter 2 when asked, then give the filename
+
+file should be in this format:
+```
+5
+23
+11
+45
+2
+67
+```
+first line is number of elements, rest are the elements
+
 ## Note
-quicksort v1 will be skipped for large inputs on sorted/reverse arrays because it causes stack overflow, thats normal
+- each experiment is run and average is taken to reduce timing errors
+- quicksort with first element pivot is skipped for large sorted/reverse inputs to avoid stack overflow, this is expected
