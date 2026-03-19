@@ -2,7 +2,7 @@ import pandas as pd
 import matplotlib.pyplot as plt
 
 # read the csv output from the c program
-data = pd.read_csv("results.csv")
+data = pd.read_csv("results.csv", encoding="utf-16")
 
 # remove rows where we skipped (quicksort v1 on large sorted arrays)
 data = data[data["Time_us"] != "SKIP"]
